@@ -4,8 +4,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'
-
+SECRET_KEY = (
+    'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'
+)
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '89.169.173.168', 'taskihome.work.gd']
@@ -63,11 +64,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB','django'),
-	'USER': os.getenv('POSTGRES_USER', 'django'),
-	'PASSWORD': os.getenv('POSTGRES_PASSWORD',''),
-	'HOST': os.getenv('DB_HOST', ''),
-	'POST': os.getenv('DB_PORT', 5432)
+        'NAME': os.getenv('POSTGRES_DB', 'django'),
+        'USER': os.getenv('POSTGRES_USER', 'django'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', ''),
+        'POST': os.getenv('DB_PORT', 5432)
     }
 }
 
@@ -77,16 +78,24 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        ('django.contrib.auth.password_validation.'
+         'UserAttributeSimilarityValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        ('django.contrib.auth.password_validation.'
+         'MinimumLengthValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        ('django.contrib.auth.password_validation.'
+         'CommonPasswordValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        ('django.contrib.auth.password_validation.'
+         'NumericPasswordValidator'),
     },
 ]
 
